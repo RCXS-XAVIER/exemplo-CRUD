@@ -1,6 +1,6 @@
 xhttp = new XMLHttpRequest();
 var lista;
-var api = "https://apibackend01raquel-qua209050.herokuapp.com/api/usuario/";
+var api = "https://apibackend01raquel-qua209050.herokuapp.com/api/usuario";
 
 function listar() {
 
