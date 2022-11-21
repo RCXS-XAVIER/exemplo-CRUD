@@ -31,14 +31,14 @@ function editar(i) {
 
 function gravar() {
     //alert("Estamos dentro da function incluir");
-    var usuario = {};
-    usuario.produto = document.getElementById("produto").value;
-    usuario.descrição = document.getElementById("descrição").value;
-    usuario.valor = document.getElementById("valor").value;
+    var produto = {};
+    produto.nome = document.getElementById("nome").value;
+    produto.descrição = document.getElementById("descrição").value;
+    produto.valor = document.getElementById("valor").value;
     // console.log(produto);
 
-    usuario.produto = document.getElementById("id").value;
-    if (usuario.id > 0) {
+    produto.id = document.getElementById("id").value;
+    if (produto.id > 0) {
         acao = "PUT"; // alteração
     } else {
         acao = "POST"; // incluir
@@ -55,15 +55,15 @@ function gravar() {
 }
 
 function limpar() {
-    document.getElementById("produto").value = "";
+    document.getElementById("nome").value = "";
     document.getElementById("descrição").value = "";
-    document.getElementById("valor produto").value = "";
+    document.getElementById("valor").value = "";
     document.getElementById("id").value = "";
 }
 
 function apagar() {
-    id = document.getElementById("produto").value;
-    xhttp.open("DELETE", api + produto);
+    id = document.getElementById("id").value;
+    xhttp.open("DELETE", api + id);
     xhttp.send();
     xhttp.onload = function() {
         alert(this.responseText);
