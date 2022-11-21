@@ -1,6 +1,6 @@
 xhttp = new XMLHttpRequest();
 var lista;
-var api = "https://RCXS-XAVIER.github.io/projeto-CRUD/projeto-CRUD/index.html";
+var api = "https://raquel-qua209050.herokuapp.com/api/usuario/";
 
 function listar() {
 
