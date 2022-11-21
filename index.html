@@ -14,26 +14,34 @@
         }
     </style>
     <div class="container">
-        <h4>Exemplo CRUD usando a api back-end e bootstrap</h4>
+        <h4>Cadastro e Consulta de Produtos</h4>
         <input type="hidden" id="id">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" class="form-control">
-        <label for="email">Email:</label>
-        <input type="text" id="email" class="form-control">
+        <label for="Produto">produto:</label>
+        <input type="text" id="produto" class="form-control">
+        <label for="Descrição do produto">Descrição do produto:</label>
+        <input type="text" id="Descrição do produto" class="form-control">
+        <label for="Valor do produto">Valor do produto:</label>
+        <input type="text" id="Valor do produto" class="form-control">
         <br>
         <input type="button" value="Gravar" onclick="gravar()" class="btn btn-primary">
         <input type="button" value="Novo" onclick="limpar()" class="btn btn-light">
         <input type="button" value="Apagar" onclick="apagar()" class="btn btn-danger">
-        <h4>Lista de Pessoas</h4>
+        <h4>Produto:</h4>
+        <br>
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th>
-                        Nome:
-                    </th>
-                    <th>
-                        Email:
-                    </th>
+
+                    <tr>
+                        <th>
+                            Descrição do produto:
+                        </th>
+
+                        <th>
+                            Valor do produto:
+                        </th>
+                    </tr>
+
                 </tr>
             </thead>
             <tbody id="lista">

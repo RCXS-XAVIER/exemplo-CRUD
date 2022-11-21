@@ -1,8 +1,6 @@
-// request via JavaScript ajax 4 passos
-// 01 criar a váriavel
 xhttp = new XMLHttpRequest();
 var lista;
-var api = "https://qua-209050.herokuapp.com/api/usuario/";
+var api = "https://apibackend01raquel-qua209050.herokuapp.com/api/usuario/";
 
 function listar() {
     // 02 definição do nosso request (forma e endereço)
@@ -18,7 +16,7 @@ function listar() {
         texto = "";
         i = 0;
         for (const u of lista) {
-            texto += `<tr onclick='editar(${i})'><td>${u.nome}</td><td>${u.email}</td></tr>`;
+            texto += `<tr onclick='editar(${i})'><td>${u.produto}</td><td>${u.Descrição}</td></tr>`;
             i++;
         }
         document.getElementById('lista').innerHTML = texto;
@@ -27,20 +25,20 @@ function listar() {
 
 function editar(i) {
     u = lista[i];
-    document.getElementById("nome").value = u.nome;
-    document.getElementById("email").value = u.email;
-    document.getElementById("id").value = u.id;
-}
+    document.getElementById("produto").value = u.produto;
+    document.getElementById("descrição").value = u.descrição;
+    document.getElementById("valor do produto").value = u.valor
 
-function gravar() {
+
     //alert("Estamos dentro da function incluir");
     var usuario = {};
-    usuario.nome = document.getElementById("nome").value;
-    usuario.email = document.getElementById("email").value;
-    // console.log(usuario);
+    usuario.produto = document.getElementById("produto").value;
+    usuario.descrição = document.getElementById("descrição").value;
+    usuario.valor = document.getElementById("valor do produto").value;
+    // console.log(produto);
 
-    usuario.id = document.getElementById("id").value;
-    if (usuario.id > 0) {
+    usuario.produto = document.getElementById("id").value;
+    if (usuario.produto > 0) {
         acao = "PUT"; // alteração
     } else {
         acao = "POST"; // incluir
@@ -57,14 +55,14 @@ function gravar() {
 }
 
 function limpar() {
-    document.getElementById("nome").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("id").value = "";
+    document.getElementById("produto").value = "";
+    document.getElementById("descrição").value = "";
+    document.getElementById("valor produto").value = "";
 }
 
 function apagar() {
-    id = document.getElementById("id").value;
-    xhttp.open("DELETE", api + id);
+    id = document.getElementById("produto").value;
+    xhttp.open("DELETE", api + produto);
     xhttp.send();
     xhttp.onload = function() {
         alert(this.responseText);
